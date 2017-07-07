@@ -39,6 +39,7 @@ namespace SilentOrbit.ProtocolBuffers
                 Enums.Add(e.ProtoName, e);
                 e.Parent = this;
             }
+            Comments = Comments == null ? proto.Comments : Comments + "\n" + proto.Comments;
         }
 
         public override string ToString()

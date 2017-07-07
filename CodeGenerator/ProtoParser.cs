@@ -71,7 +71,12 @@ namespace SilentOrbit.ProtocolBuffers
             while (true)
             {
                 string token = tr.ReadNextComment();
-                if (ParseComment(token))
+                bool isComment = ParseComment(token);
+                if (p.Comments == null)
+                {
+                    p.Comments = isComment ? string.Join("\n", lastComment) : "";
+                }
+                if (isComment)
                     continue;
 
                 try
