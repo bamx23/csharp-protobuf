@@ -44,6 +44,10 @@ This file will be overwritten when CodeGenerator is run.
 To make custom modifications, edit the .proto file and add //:external before the message line
 then write the code and the changes in a separate file.");
 
+                cw.WriteLine();
+                cw.Comment("ReSharper disable InconsistentNaming");
+                cw.WriteLine();
+
                 cw.WriteLine("using System;");
                 cw.WriteLine("using System.Collections.Generic;");
                 if (options.DataContractAttributes)
@@ -101,6 +105,10 @@ Report bugs to: https://silentorbit.com/protobuf/");
                 cw.WriteLine();
                 cw.Comment(@"DO NOT EDIT
 This file will be overwritten when CodeGenerator is run.");
+
+                cw.WriteLine();
+                cw.Comment("ReSharper disable InconsistentNaming");
+                cw.WriteLine();
 
                 cw.WriteLine("using System;");
                 cw.WriteLine("using System.IO;");
