@@ -40,6 +40,8 @@ then write the code and the changes in a separate file.");
 
                 cw.WriteLine("using System;");
                 cw.WriteLine("using System.Collections.Generic;");
+                if (options.DataContractAttributes)
+                    cw.WriteLine("using System.Runtime.Serialization;");
                 cw.WriteLine();
 
                 var messageCode = new MessageCode(cw, options);

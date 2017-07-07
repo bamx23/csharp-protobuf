@@ -33,6 +33,8 @@ namespace SilentOrbit.ProtocolBuffers
 
             //Default class
             cw.Summary(m.Comments);
+            if (options.DataContractAttributes)
+                cw.Attribute("DataContract");
             cw.Bracket(m.OptionAccess + " partial " + m.OptionType + " " + m.CsType);
 
             if (options.GenerateDefaultConstructors)
@@ -149,6 +151,9 @@ namespace SilentOrbit.ProtocolBuffers
             {
                 if (f.Comments != null)
                     cw.Summary(f.Comments);
+
+                if (options.DataContractAttributes)
+                    cw.Attribute("DataMember");
 
                 if (f.OptionExternal)
                 {
